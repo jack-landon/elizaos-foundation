@@ -1,0 +1,111 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navLinks = [
+    { name: "developer", href: "https://docs.elizaos.ai/" },
+    { name: "blog", href: "https://elizaos.substack.com/" },
+    { name: "X", href: "https://x.com/ElizaEcoFund" },
+  ];
+
+  return (
+    <div className="ml-2 md:ml-5">
+      <header className="w-full py-6 px-3 flex justify-between items-center relative z-50">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link href="/">
+            <Image
+              src="/header/eliza-header-logo.svg"
+              alt="Logo"
+              width={370}
+              height={25}
+              className="z-10 w-[280px] h-[19px] md:w-full md:h-full"
+            />
+          </Link>
+        </div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden w-full justify-end space-x-8 xl:px-12 lg:flex uppercase text-sm">
+          {navLinks.map((link) => {
+            return (
+              <Link
+                href={link.href}
+                key={link.name}
+                className="text-white text-[18px] font-bold"
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Mobile Hamburger */}
+        {!isOpen && (
+          <button
+            className="lg:hidden cursor-pointer block"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <Image
+              src="/header/hamburger-white.svg"
+              alt="Menu Toggle"
+              className="w-[30px] h-[24px]"
+              width={24}
+              height={24}
+              unoptimized
+              priority
+            />
+          </button>
+        )}
+
+        {/* Mobile Menu Overlay */}
+        {isOpen && (
+          <div className="fixed inset-0 bg-[#00071E]/60 backdrop-blur-sm -z-10 flex flex-col justify-items-end items-end justify-center gap-8 text-xl uppercase overflow-hidden lg:hidden">
+            {/* Logo */}
+            <div className="absolute top-6 left-4 z-10">
+              <Link href="/">
+              {/* <Image
+              src="/header/eliza-header-logo.svg"
+              alt="Logo"
+              width={370}
+              height={25}
+              className="z-90 w-[280px] h-[19px] md:w-full md:h-full"
+            /> */}
+              </Link>
+            </div>
+            <button
+              className="absolute top-6 right-4 cursor-pointer z-10"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+            >
+              <Image
+                src="/header/close.svg"
+                alt="Close Menu"
+                width={24}
+                height={24}
+                priority
+              />
+            </button>
+            <div className="flex flex-col items-end gap-8 space-y-4 pr-8 z-10">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  className="text-white text-[28px] font-bold"
+                  onClick={() => setIsOpen(false)}
+                  href={link.href}
+                  {...(link.name === "github" ? { target: "_blank" } : {})}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+    </div>
+  );
+}
