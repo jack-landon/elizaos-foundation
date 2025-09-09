@@ -46,7 +46,7 @@ export default function Header() {
         {/* Mobile Hamburger */}
         {!isOpen && (
           <button
-            className=" mr-2 lg:hidden cursor-pointer block"
+            className="mr-2 lg:hidden cursor-pointer block"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -66,7 +66,7 @@ export default function Header() {
         {isOpen && (
           <div className="fixed inset-0 bg-[#00071E]/60 backdrop-blur-sm -z-10 flex flex-col justify-items-end items-end justify-center gap-8 text-xl uppercase overflow-hidden lg:hidden">
             <button
-              className="absolute mt-1 top-6 right-4 cursor-pointer z-10"
+              className="absolute mt-0 top-6 right-4 cursor-pointer z-10"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >
