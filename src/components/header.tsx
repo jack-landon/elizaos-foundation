@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="ml-2">
-      <header className="w-full py-6 px-3 flex justify-between items-center relative z-50">
+      <header className="w-full py-6 lg:px-3 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="flex items-center">
           <Image
@@ -22,7 +22,7 @@ export default function Header() {
             alt="Logo"
             width={370}
             height={25}
-            className="z-10 w-[280px] h-[19px] md:w-full md:h-full"
+            className="z-10 w-[280px] h-[18px] md:w-full md:h-full"
           />
         </div>
 
@@ -46,7 +46,7 @@ export default function Header() {
         {/* Mobile Hamburger */}
         {!isOpen && (
           <button
-            className="mt-1 lg:hidden cursor-pointer block"
+            className=" mr-2 lg:hidden cursor-pointer block"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
