@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="ml-2">
+    <div className="px-2 md:px-5 xl:px-10">
       <header className="w-full py-6 lg:px-3 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="flex items-center">
@@ -33,7 +33,7 @@ export default function Header() {
               <Link
                 href={link.href}
                 key={link.name}
-                className="text-white text-[18px] font-bold"
+                className="text-white text-[18px] font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >

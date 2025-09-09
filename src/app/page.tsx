@@ -15,7 +15,7 @@ export default function Home() {
       </video>
 
       {/* Content */}
-      <div className="ml-4 md:ml-4 flex justify-end h-2/5 w-full absolute bottom-0 left-0 flex-col space-y-6">
+      <div className="px-2 md:px-5 xl:px-10 flex justify-end h-2/5 w-full absolute bottom-0 left-0 flex-col space-y-6">
         <h1 className="text-white text-[32px] md:text-[53px] lg:text-[70px] font-bold uppercase max-w-xs md:max-w-xl lg:max-w-3xl leading-none">
           YOUR FOUNDATION FOR THE FUTURE
         </h1>
