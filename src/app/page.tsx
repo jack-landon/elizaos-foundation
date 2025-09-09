@@ -16,10 +16,10 @@ export default function Home() {
 
       {/* Content */}
       <div className="ml-4 md:ml-4 flex justify-end h-2/5 w-full absolute bottom-0 left-0 flex-col space-y-6">
-        <h1 className="text-white text-[36px] md:text-[53px] lg:text-[70px] font-bold uppercase max-w-sm md:max-w-xl lg:max-w-3xl leading-none">
+        <h1 className="text-white text-[32px] md:text-[53px] lg:text-[70px] font-bold uppercase max-w-xs md:max-w-xl lg:max-w-3xl leading-none">
           YOUR FOUNDATION FOR THE FUTURE
         </h1>
-        <p className="text-white text-[18px] md:text-[27px] lg:text-[36px] font-normal max-w-sm md:max-w-lg lg:max-w-3xl leading-tight">
+        <p className="text-white text-[18px] md:text-[27px] lg:text-[36px] font-normal max-w-xs md:max-w-md lg:max-w-3xl leading-tight">
           The Eliza Foundation works with institutions, businesses, regulators,
           and policymakers to solve problems in new ways.
         </p>

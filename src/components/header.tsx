@@ -46,16 +46,16 @@ export default function Header() {
         {/* Mobile Hamburger */}
         {!isOpen && (
           <button
-            className="lg:hidden cursor-pointer block"
+            className="mt-1 lg:hidden cursor-pointer block"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             <Image
               src="/header/hamburger-white.svg"
               alt="Menu Toggle"
-              className="w-[30px] h-[24px]"
-              width={24}
-              height={24}
+              className="w-[25px] h-[20px]"
+              width={30}
+              height={20}
               unoptimized
               priority
             />
@@ -66,15 +66,16 @@ export default function Header() {
         {isOpen && (
           <div className="fixed inset-0 bg-[#00071E]/60 backdrop-blur-sm -z-10 flex flex-col justify-items-end items-end justify-center gap-8 text-xl uppercase overflow-hidden lg:hidden">
             <button
-              className="absolute top-6 right-4 cursor-pointer z-10"
+              className="absolute mt-1 top-6 right-4 cursor-pointer z-10"
               onClick={() => setIsOpen(false)}
               aria-label="Close menu"
             >
               <Image
                 src="/header/close.svg"
                 alt="Close Menu"
-                width={24}
-                height={24}
+                className="w-[30px] h-[20px]"
+                width={30}
+                height={20}
                 priority
               />
             </button>
