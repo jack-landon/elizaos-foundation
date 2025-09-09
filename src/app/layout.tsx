@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import localFont from "next/font/local";
 
-
 const NHaasFont = localFont({
   src: [
     {
@@ -40,8 +39,6 @@ const NHaasFont = localFont({
   display: "swap",
 });
 
- 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,9 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${NHaasFont.className} antialiased`}
-      >
+      <body className={`${NHaasFont.className} antialiased`}>
         <Header />
         {children}
       </body>

@@ -13,29 +13,29 @@ export default function Header() {
   ];
 
   return (
-    <div className="ml-2 md:ml-5">
+    <div className="ml-2">
       <header className="w-full py-6 px-3 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/">
-            <Image
-              src="/header/eliza-header-logo.svg"
-              alt="Logo"
-              width={370}
-              height={25}
-              className="z-10 w-[280px] h-[19px] md:w-full md:h-full"
-            />
-          </Link>
+          <Image
+            src="/header/eliza-header-logo.svg"
+            alt="Logo"
+            width={370}
+            height={25}
+            className="z-10 w-[280px] h-[19px] md:w-full md:h-full"
+          />
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden w-full justify-end space-x-8 xl:px-12 lg:flex uppercase text-sm">
+        <nav className="hidden w-full justify-end space-x-8 md:px-12 lg:flex uppercase text-sm">
           {navLinks.map((link) => {
             return (
               <Link
                 href={link.href}
                 key={link.name}
                 className="text-white text-[18px] font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {link.name}
               </Link>
@@ -65,18 +65,6 @@ export default function Header() {
         {/* Mobile Menu Overlay */}
         {isOpen && (
           <div className="fixed inset-0 bg-[#00071E]/60 backdrop-blur-sm -z-10 flex flex-col justify-items-end items-end justify-center gap-8 text-xl uppercase overflow-hidden lg:hidden">
-            {/* Logo */}
-            <div className="absolute top-6 left-4 z-10">
-              <Link href="/">
-              {/* <Image
-              src="/header/eliza-header-logo.svg"
-              alt="Logo"
-              width={370}
-              height={25}
-              className="z-90 w-[280px] h-[19px] md:w-full md:h-full"
-            /> */}
-              </Link>
-            </div>
             <button
               className="absolute top-6 right-4 cursor-pointer z-10"
               onClick={() => setIsOpen(false)}
@@ -97,7 +85,8 @@ export default function Header() {
                   className="text-white text-[28px] font-bold"
                   onClick={() => setIsOpen(false)}
                   href={link.href}
-                  {...(link.name === "github" ? { target: "_blank" } : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {link.name}
                 </Link>
