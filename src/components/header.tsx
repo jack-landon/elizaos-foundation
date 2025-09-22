@@ -8,7 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
     { name: "developer", href: "https://docs.elizaos.ai/" },
-    { name: "blog", href: "https://elizaos.substack.com/" },
+    { name: "blog", href: "https://mirror.xyz/elizaos.eth" },
     { name: "X", href: "https://x.com/ElizaEcoFund" },
   ];
 
