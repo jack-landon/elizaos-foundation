@@ -33,7 +33,7 @@ export default function Header() {
               <Link
                 href={link.href}
                 key={link.name}
-                className="text-white text-[18px] font-medium"
+                className="text-white text-[18px] hover:text-[#FF5800] transition-colors duration-200 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
